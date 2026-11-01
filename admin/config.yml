@@ -18,3 +18,33 @@ collections:
       - { label: Date, name: date, widget: datetime }
       - { label: Summary, name: summary, widget: text, required: false }
       - { label: Body, name: body, widget: markdown }
+
+  - name: projects
+    label: Projects
+    folder: _projects
+    create: true
+    extension: md
+    slug: "{{slug}}"
+    media_folder: /assets/images/projects
+    public_folder: /assets/images/projects
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Order (1 shows first), name: order, widget: number, value_type: int }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Thumbnail, name: thumbnail, widget: image, required: false }
+      - { label: Skills used, name: skills, widget: list, required: false }
+      - label: Details (role, term, tools...)
+        name: details
+        widget: list
+        required: false
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: Value, name: value, widget: string }
+      - label: Results
+        name: results
+        widget: list
+        required: false
+        fields:
+          - { label: Highlight, name: value, widget: string }
+          - { label: Text, name: text, widget: string }
+      - { label: Body, name: body, widget: markdown }

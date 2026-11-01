@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,57 +39,20 @@
 
     <section id="projects" class="section">
       <h2>Projects</h2>
-
-      <!-- To add a project, copy one <article> block. Put images in assets/images/
-           and swap the placeholder <div class="ph"> for the commented <img> line. -->
-      <article class="project">
-        <figure>
-          <div class="ph">Add a photo, render, or plot</div>
-        </figure>
-        <div class="body">
-          <h3>Gripper, torpedo launcher, and tag dropper</h3>
-          <p>As Mechanisms Lead for Wisconsin Autonomous Underwater Vehicles, I lead the design, prototyping, and testing of the vehicle’s gripper, torpedo launcher, and tag dropper.</p>
-          <p>I work with other subteam leads so each mechanism integrates cleanly with the main AUV chassis. [Add a result: test outcome, competition score, or iteration count.]</p>
-          <dl class="block">
-            <div><dt>Role</dt><dd>Mechanisms Lead</dd></div>
-            <div><dt>Team</dt><dd>WAUV, UW–Madison</dd></div>
-            <div><dt>Term</dt><dd>Jan. 2026 to present</dd></div>
-            <div><dt>Tools</dt><dd>[Onshape, 3D printing, etc.]</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="project">
-        <figure>
-          <div class="ph">Add a photo, render, or plot</div>
-          <!-- <img src="assets/images/aprilaire.jpg" alt="Describe what the image shows" loading="lazy"> -->
-        </figure>
-        <div class="body">
-          <h3>Damper testing and failure analysis at AprilAire</h3>
-          <p>During my summer 2026 internship, I worked on product testing, failure investigation, and customer-facing tools across AprilAire’s damper and dehumidifier lines.</p>
-          <ul class="results">
-            <li><strong>$100K+ per year</strong> in losses projected to be recovered by the zone damper design change.</li>
-            <li><strong>$20K+ per year</strong> in lost sales to competitors addressed by fixing the barometric damper defect.</li>
-            <li><strong>±0.1°</strong> accuracy on the live angular displacement tool.</li>
-            <li><strong>Up to 22%</strong> EPR reporting error identified in the existing calculation method.</li>
-          </ul>
-          <ul>
-            <li>Found the root cause of motor failures in zone dampers and generated a load profile to guide design improvements.</li>
-            <li>Resolved a recurring quality issue in barometric dampers using airflow and static pressure tests on a five-ton furnace system, a laminar flow element (LFE), and ASHRAE lab ducts.</li>
-            <li>Built a live angular displacement measurement tool with Hall effect sensors, improving testing speed and reliability.</li>
-            <li>Redesigned the dehumidifier sizing map using calculated humidification load data from across the United States.</li>
-            <li>Wrote a work instruction for damper warranty failure investigations to keep root-cause analysis consistent.</li>
-            <li>Found that an oversimplified EPR (Extended Producer Responsibility) calculation could cause under- or over-reporting by up to 22%.</li>
-          </ul>
-          <dl class="block">
-            <div><dt>Role</dt><dd>Mechanical Engineering Intern</dd></div>
-            <div><dt>Company</dt><dd>AprilAire, Sun Prairie, WI</dd></div>
-            <div><dt>Term</dt><dd>Jun. to Aug. 2026</dd></div>
-            <div><dt>Tools</dt><dd>Hall effect sensors, LFE, ASHRAE lab ducts</dd></div>
-          </dl>
-        </div>
-      </article>
-
+      <!-- Projects come from the _projects folder. Add or edit a file there (or use /admin/). -->
+      {% assign projects = site.projects | sort: "order" %}
+      <ul class="project-list">
+        {% for project in projects %}
+        <li class="project-card">
+          {% if project.thumbnail %}<img src="{{ project.thumbnail | relative_url }}" alt="" loading="lazy">{% else %}<div class="ph">Add a thumbnail</div>{% endif %}
+          <div class="project-card-body">
+            <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+            <p>{{ project.summary }}</p>
+            <ul class="tags">{% for skill in project.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
     </section>
 
     <section id="skills" class="section">

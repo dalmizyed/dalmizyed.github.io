@@ -6,10 +6,11 @@ title: Blog
 {% if site.posts.size == 0 %}<p>No posts yet.</p>{% endif %}
 <ul class="post-list">
   {% for post in site.posts %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <span class="meta">{{ post.date | date: "%B %-d, %Y" }}</span>
+  <li class="post-card">
+    <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+    <span class="more">Read post</span>
   </li>
   {% endfor %}
 </ul>

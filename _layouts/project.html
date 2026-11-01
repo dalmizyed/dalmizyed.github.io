@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<button type="button" class="back" id="back" data-fallback="{{ '/' | relative_url }}#projects">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+  Back to projects
+</button>
+<noscript><p><a href="{{ '/' | relative_url }}#projects">Back to projects</a></p></noscript>
+
+<article class="project-page">
+  <h1>{{ page.title }}</h1>
+  {% if page.skills.size > 0 %}
+  <ul class="tags">{% for skill in page.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+  {% endif %}
+  {% if page.thumbnail %}<img class="hero-img" src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}">{% endif %}
+  {% if page.results.size > 0 %}
+  <ul class="results">
+    {% for r in page.results %}<li><strong>{{ r.value }}</strong> {{ r.text }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% if page.details.size > 0 %}
+  <dl class="block">
+    {% for d in page.details %}<div><dt>{{ d.label }}</dt><dd>{{ d.value }}</dd></div>{% endfor %}
+  </dl>
+  {% endif %}
+  <div class="post">{{ content }}</div>
+</article>
+
+<script>
+  // Go back in history if the reader came from the home page (restores scroll position);
+  // otherwise go to the projects list.
+  document.getElementById('back').addEventListener('click', function () {
+    var fallback = this.getAttribute('data-fallback');
+    var fromHome = false;
+    try {
+      var ref = new URL(document.referrer);
+      var target = new URL(fallback, location.href);
+      fromHome = ref.origin === location.origin && ref.pathname === target.pathname;
+    } catch (e) {}
+    if (fromHome && history.length > 1) { history.back(); } else { location.href = fallback; }
+  });
+</script>

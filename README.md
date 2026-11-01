@@ -51,3 +51,11 @@ The blog uses Jekyll, which GitHub Pages builds automatically (no setup needed).
 4. Write a post and publish. The editor commits it to the repo, and the site updates in a minute or two.
 
 Only people with write access to the repo can publish, so nobody else can post. Don't share the token or commit it.
+
+## Projects
+
+Projects are Markdown files in `_projects/`. Each one gets its own page at `/projects/file-name/` and a card on the home page, sorted by `order`.
+
+- Add a project: copy an existing file in `_projects/`, rename it, and edit the front matter at the top (title, order, summary, thumbnail, skills, details, results). Everything below the second `---` is the page text.
+- Thumbnails: save an image in `assets/images/projects/` and set `thumbnail: /assets/images/projects/your-image.jpg`. Leave it blank to show a placeholder.
+- Or use the admin page: open `/admin/`, choose Projects, and fill in the form.

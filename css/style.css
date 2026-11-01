@@ -138,3 +138,65 @@ figure img, .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1
 }
 .back:hover { background: var(--blue); color: #fff; }
 .back:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+/* Project list on the home page */
+.project-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.25rem; }
+.project-card { position: relative; display: grid; grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; background: #fff; border: 1px solid var(--ink); }
+@media (min-width: 40rem) { .project-card { grid-template-columns: 15rem 1fr; } }
+.project-card:hover { border-color: var(--blue); box-shadow: 4px 4px 0 var(--blue); }
+.project-card:focus-within { outline: 3px solid var(--blue); outline-offset: 3px; }
+.project-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--ink); display: block; }
+.project-card h3 { font-size: 1.9rem; margin-bottom: .5rem; }
+.project-card h3 a { color: var(--ink); text-decoration: none; }
+.project-card h3 a::after { content: ""; position: absolute; inset: 0; } /* whole card is clickable */
+.project-card h3 a:focus-visible { outline: none; }
+.project-card p { margin: 0 0 .5rem; }
+
+.tags { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags li { padding: .1rem .6rem; font-size: .9rem; border: 1px solid var(--muted); background: var(--paper); }
+
+/* Individual project page */
+.project-page { max-width: 44rem; }
+.project-page .hero-img { width: 100%; margin: 1.25rem 0; border: 1px solid var(--ink); display: block; }
+ul.results { list-style: none; padding: .25rem 0 .25rem 1rem; margin: 1.25rem 0; border-left: 3px solid var(--blue); }
+ul.results li { margin-bottom: .5rem; }
+ul.results strong { font-family: "Barlow Condensed", sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--blue); }
+.project-page .block { max-width: 34rem; }
+
+/* Hover and click feedback */
+a, .btn, .back, .project-card, .post-card {
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+/* Nav: underline slides in on hover */
+.bar nav a { display: inline-block; padding-bottom: 2px; text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
+  transition: background-size .25s ease, color .2s ease, transform .1s ease; }
+.bar nav a:hover { text-decoration: none; background-size: 100% 2px; }
+.bar nav a:active { transform: translateY(1px); }
+.bar-name:hover { color: var(--blue); }
+
+/* Text links: underline thickens on hover, dips on click */
+.contact a, .post a { display: inline-block; text-decoration-thickness: 1px; }
+.contact a:hover, .post a:hover { text-decoration-thickness: 3px; }
+.contact a:active, .post a:active { transform: translateY(1px); }
+
+/* Buttons: lift on hover, press down on click */
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--ink); }
+.btn:active { transform: translate(1px, 1px); box-shadow: 0 0 0 var(--ink); }
+.btn.ghost:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+/* Back button: arrow nudges left, button presses in */
+.back svg { transition: transform .2s ease; }
+.back:hover svg { transform: translateX(-4px); }
+.back:active { transform: scale(.97); }
+
+/* Cards: lift on hover, press on click */
+.project-card:hover, .post-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--blue); }
+.project-card:active, .post-card:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--blue); }
+
+@media (prefers-reduced-motion: reduce) {
+  a, .btn, .back, .back svg, .project-card, .post-card, .bar nav a { transition: none; }
+  .btn:hover, .btn:active, .back:hover svg, .back:active, .project-card:hover, .project-card:active,
+  .post-card:hover, .post-card:active, .bar nav a:active, .contact a:active, .post a:active { transform: none; }
+}

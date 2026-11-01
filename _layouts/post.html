@@ -1,9 +1,29 @@
 ---
 layout: default
 ---
+<button type="button" class="back" id="back" data-fallback="{{ '/blog/' | relative_url }}">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+  Back to blog
+</button>
+<noscript><p><a href="{{ '/blog/' | relative_url }}">Back to blog</a></p></noscript>
+
 <article class="post">
   <h1>{{ page.title }}</h1>
   <p class="meta">{{ page.date | date: "%B %-d, %Y" }}</p>
   {{ content }}
 </article>
-<p><a href="{{ '/blog/' | relative_url }}">All posts</a></p>
+
+<script>
+  // Go back in history if the reader came from the blog list (restores scroll position);
+  // otherwise go to the blog list.
+  document.getElementById('back').addEventListener('click', function () {
+    var fallback = this.getAttribute('data-fallback');
+    var fromBlog = false;
+    try {
+      var ref = new URL(document.referrer);
+      var target = new URL(fallback, location.href);
+      fromBlog = ref.origin === location.origin && ref.pathname.indexOf(target.pathname) === 0;
+    } catch (e) {}
+    if (fromBlog && history.length > 1) { history.back(); } else { location.href = fallback; }
+  });
+</script>
