@@ -22,7 +22,7 @@ A static portfolio site (plain HTML and CSS, no build step) for GitHub Pages.
 
 ## Customize
 
-- `index.html`: replace every `[bracketed]` placeholder, "Your Name", and the email and profile links.
+- `index.html`: replace every `[bracketed]` placeholder and the GitHub link.
 - Add a project: copy one `<article class="project">` block.
 - Images: put files in `assets/images/`, then replace the gray placeholder `<div class="ph">` with the commented `<img>` line. Use JPG/WebP under ~300 KB each.
 - Résumé: save your PDF as `assets/resume/resume.pdf`.
@@ -34,3 +34,20 @@ A static portfolio site (plain HTML and CSS, no build step) for GitHub Pages.
 - Show your own work: CAD screenshots, FEA plots, photos of the built part.
 - Be clear about what you did versus what the team did.
 - Don’t post anything covered by an NDA or an internship agreement.
+
+## Blog
+
+The blog uses Jekyll, which GitHub Pages builds automatically (no setup needed).
+
+- Posts are Markdown files in `_posts/`, named `YYYY-MM-DD-title.md`.
+- The blog lives at `/blog/`, and the post editor lives at `/admin/`.
+- The repo must be named `dalmizyed.github.io` and use the `main` branch (see `admin/config.yml`).
+
+### Posting from the admin page
+
+1. On GitHub, go to Settings → Developer settings → Personal access tokens → Fine-grained tokens.
+2. Create a token limited to this one repo, with **Contents: Read and write**. Save it somewhere private.
+3. Open `https://dalmizyed.github.io/admin/`, choose the sign-in with token option, and paste the token.
+4. Write a post and publish. The editor commits it to the repo, and the site updates in a minute or two.
+
+Only people with write access to the repo can publish, so nobody else can post. Don't share the token or commit it.
