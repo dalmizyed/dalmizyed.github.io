@@ -1,5 +1,5 @@
 ---
-title: Gripper, torpedo launcher, and tag dropper
+title: Wisconsin Autonomous Underwater Vehicles (WAUV)
 order: 1
 summary: As Mechanisms Lead for Wisconsin Autonomous Underwater Vehicles, I lead the design, prototyping, and testing of the vehicle’s gripper, torpedo launcher, and tag dropper.
 thumbnail: /assets/images/projects/Screenshot 2026-10-25 220551.png
