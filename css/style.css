@@ -115,8 +115,26 @@ figure img, .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1
 .post h3 { font-size: 1.4rem; margin: 1.5rem 0 .5rem; }
 .post img { max-width: 100%; height: auto; border: 1px solid var(--ink); }
 .post pre { overflow-x: auto; padding: 1rem; background: #e6ebea; }
-.post-list { list-style: none; padding: 0; margin: 0; max-width: 40rem; border-top: 1px solid var(--ink); }
-.post-list li { padding: 1rem 0; border-bottom: 1px solid var(--grid); }
-.post-list a { font: 700 1.6rem "Barlow Condensed", sans-serif; }
-.post-list .meta { display: block; }
-.post-list p { margin: .25rem 0 0; }
+
+/* Blog list: each post is its own block */
+.post-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.25rem; max-width: 40rem; }
+.post-card { position: relative; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid var(--ink); }
+.post-card:hover { border-color: var(--blue); box-shadow: 4px 4px 0 var(--blue); }
+.post-card:focus-within { outline: 3px solid var(--blue); outline-offset: 3px; }
+.post-card .meta { margin: 0; }
+.post-card h2 { font-size: 1.9rem; margin: .25rem 0 .5rem; }
+.post-card h2 a { color: var(--ink); text-decoration: none; }
+.post-card h2 a::after { content: ""; position: absolute; inset: 0; } /* makes the whole block clickable */
+.post-card h2 a:focus-visible { outline: none; }
+.post-card p { margin-bottom: .75rem; }
+.post-card .more { color: var(--blue); font-weight: 600; }
+.post-card:hover .more { text-decoration: underline; }
+
+/* Back button on posts */
+.back {
+  display: inline-flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; padding: .55rem 1rem;
+  font: 600 1rem "Source Sans 3", system-ui, sans-serif; color: var(--blue);
+  background: var(--paper); border: 2px solid var(--blue); cursor: pointer;
+}
+.back:hover { background: var(--blue); color: #fff; }
+.back:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
