@@ -157,7 +157,7 @@ figure img, .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1
 
 /* Individual project page */
 .project-page { max-width: 44rem; }
-.project-page .hero-img { width: 100%; margin: 1.25rem 0; border: 1px solid var(--ink); display: block; }
+.project-page .hero-img { width: 100%; max-width: 18rem; aspect-ratio: 4 / 3; object-fit: cover; margin: 1.25rem 0; border: 1px solid var(--ink); display: block; }
 ul.results { list-style: none; padding: .25rem 0 .25rem 1rem; margin: 1.25rem 0; border-left: 3px solid var(--blue); }
 ul.results li { margin-bottom: .5rem; }
 ul.results strong { font-family: "Barlow Condensed", sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--blue); }
