@@ -41,7 +41,7 @@ Mechanically, this keeps us on our toes. The gripper mechanism must not only be 
 
 Over the last semester, I've worked on my own design for the gripper mechanism.
 
-![](/assets/images/projects/Screenshot%202026-10-25%20220551.png)
+![](/assets/images/projects/image%20%284%29.png)
 
 This design features some key elements that make it very unique. 
 
