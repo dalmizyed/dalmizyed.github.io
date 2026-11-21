@@ -18,37 +18,59 @@ details:
   - label: Tools
     value: OnShape, 3D Printing, Soldering
 results: []
+documents: []
 ---
 
-Wisconsin Autonomous Underwater Vehicles (WAUV) is a brand new engineering club at UW-Madison. We will be competing in the [RoboSub](https://robosub.org/programs/2027/) competition this coming summer in Irvine, California.
+Wisconsin Autonomous Underwater Vehicles (WAUV) is a new engineering club at UW–Madison. We will compete in RoboSub in Irvine, California, in summer 2027, where our fully autonomous submarine must complete six tasks to earn the highest score. Three of those tasks (3, 4, and 5) need mechanisms.
 
-During the competition, our fully autonomous submarine must complete [six tasks](https://robonation.gitbook.io/robosub-resources/section-3-autonomy-challenge/3.2-task-descriptions) to earn the highest score. Tasks 3, 4, and 5 require mechanical apparatuses. As mechanisms lead, my job is to not only design them myself, but guide the design, prototyping, testing, and integration of all of these mechanisms. I'll go over each task and their respective mechanism projects in more detail below:
+As Mechanisms Lead, I design mechanisms myself and guide the design, prototyping, testing, and integration of all of them across a team of 15+ engineers.
 
-**Task 3 (Recon):**
-The _Recon_ task requires the AUV to drop markers in the correct bin based on a role assigned at the beginning of the competition. Competitors are allowed two markers, typically small steel balls, and must accurately place both markers in the correct bins. The AUV will obtain points for placing up to two markers in the correct bin, and extra points if they place them in both correct bins, meaning one in each bin, rather than two markers in one of the bins.
+## 
 
-From a mechanisms perspective, this task is the easiest. We create a dropper that utilizes either a servo or solenoid to hold both markers inside, and drop them one-by-one on command. The droppers, therefore, aren't very mechanically complicated, and should focus on reliability and small form factor.
+| Task | What the AUV must do | Mechanism | What matters most |
+| --- | --- | --- | --- |
+| 3, Recon | Drop two markers into the correct bin | Marker dropper | Reliability and small size |
+| 4, Deploy | Fire a torpedo through the correct opening | Torpedo launcher | Accuracy |
+| 5, Restore | Pick up objects, surface in the right area, and place them in baskets | Gripper | Versatility and simplicity |
 
-**Task 4 (Deploy):**
-The _Deploy_ task requires the AUV to fire some form of torpedo/projectile through openings on a target board. Full points are awarded only if the torpedo travels fully through the correct opening, once again determined by a pre-assigned role. Extra points are earned for firing from a further distance, testing accuracy.
+## 
 
-The torpedo launcher mechanism is a great mechanical challenge. Teams are allowed up to two torpedoes, and due to the nature of the competition, they must be pre-loaded at the beginning of a run. Our current design for this mechanism uses bungee cords to pull on the torpedo, and solenoids to hold it in until we want to fire it. This project combines both mechanical design challenge with dynamics analysis to ensure accurate torpedoes.
+## Task 3, Recon: _Dropper Mechanism_
 
-**Task 5 (Restore):**
-The _Restore_ task requires the AUV to identify and pick up objects, surface with them within a specific area (surfacing anywhere else during the competition results in immediate disqualification for that run), and then place them in their correct basket. This task is historically the most difficult for teams to complete. One of the most challenging things about this task is that the objects to be picked up are different each year, and are not announced until very close to the competition.
+In Recon, the AUV drops markers into the correct bin, based on a role assigned at the start of the competition. Each team gets two markers, typically small steel balls. Placing a marker in the correct bin scores points, and placing one in each correct bin scores extra.
 
-Mechanically, this keeps us on our toes. The gripper mechanism must not only be designed with the broadest variety of object grabbing capabilities in mind, but it must still be reliable and simple, to ensure that no mechanical failures can kill a run. There are many different approaches to this problem. Some teams utilize full 6-DOF robot arms, while many opt for a simpler, horizontally grasping gripper mechanism. Our team's approach is to design many different mechanisms, so we can decide at competition which to use and easily hot-swap them in for one another. Every one of our designs is actuated by one singular stepper motor, so our designs are limited only by that.
+This is the simplest of the three mechanisms. A servo or solenoid holds both markers inside the dropper and releases them one at a time on command. Because the mechanism is simple, the design focus is reliability and a small form factor.
 
-Over the last semester, I've worked on my own design for the gripper mechanism.
+## Task 4, Deploy: _Torpedo Launcher_
 
-![](/assets/images/projects/image%20%284%29.png)
+In Deploy, the AUV fires a torpedo through an opening on a target board. Full points go only to a torpedo that travels all the way through the correct opening, which is set by a pre-assigned role, and firing from farther away earns extra points for accuracy. Teams may carry up to two torpedoes, and both must be preloaded before the run starts.
 
-This design features some key elements that make it very unique. 
+Our current launcher uses bungee cords to pull the torpedo forward and solenoids to hold it in place until we fire. The project combines mechanical design with dynamics analysis to keep the torpedoes accurate.
 
-First of all, the stepper motor spins pulleys to apply a tensile load to tendon cables running through the inside of each of the two fingers. This tensile load causes the fingers to close up in a curling motion, allowing for dynamic wrapping around of any shape of object.
+## Task 5, Restore: _Gripper_
 
-The zig-zag shaped springs apply a reaction torque to each of the finger joints, causing it to naturally stay opened when the stepper is not actuating the tendons. This effectively causes an on/off motion in a system that has no physical stops.
+In Restore, the AUV identifies and picks up objects, surfaces with them inside a specific area, and places them in the correct basket. Surfacing anywhere else disqualifies the run. Teams historically find this the hardest task, partly because the objects change every year and aren’t announced until shortly before the competition.
 
-TPU finger pads are screwed into each of the gripping surfaces to ensure a good grip under the water, and they can deform to whatever shape is being grasped.
+That uncertainty shapes the gripper. It has to handle the widest possible range of objects while staying simple and reliable, so that a mechanical failure can’t end a run. Some teams use full 6-DOF robot arms, and many use a simple horizontal gripper. Our approach is to build several different mechanisms that each run on a single stepper motor, so we can choose one at competition and hot-swap it in.
 
-The linkages between each finger joint prevent deflection forward and backward, causing the springs to only allow the curling motion and preventing fracture during use.
+## My gripper design
+
+Over the last semester, I designed my own gripper. Static load and stress calculations guided my decisions, and it can lift hand-sized objects up to 6 kg.
+
+- Tendon-driven curling. The stepper motor spins pulleys that pull on tendon cables running through the inside of each of the two fingers. The tension curls the fingers closed, so they wrap around objects of many different shapes.
+- Springs that open the fingers. Print-in-place springs at each finger joint apply a reaction torque that keeps the fingers open whenever the stepper isn’t pulling the tendons. This gives an on/off motion without any physical stops.
+- TPU finger pads. Screwed onto each gripping surface, the pads grip well underwater and deform to match the object.
+- Linkages between joints. They stop the fingers from deflecting forward or backward, so the springs allow only the curling motion and the fingers don’t fracture in use.
+
+## Testing and results
+
+We are in the process of shifting our attention more towards testing and validation of our mechanisms. I've been assisting with accuracy measurements for our two prototype torpedo launchers.
+
+- To test accuracy, I purchased a fish tank to fire torpedoes in. The tank is 4ft in length, making it longer than the distance we hope to be firing from during the competition task. We record slow motion video from the side of the tank to see the distance travelled by the torpedo from the side or any vertical deviations, so we can better understand the cause of deviations. We also record from the front of the torpedo launcher to see where on a target it lands. We quantify accuracy based on deviation in X and Y coordinates from the center of the target.
+
+## Next steps
+
+I am planning to validate both the versatility and reliability of the gripper. I've designed two tests.
+
+- For versatility, I am going to create or obtain various objects with differing geometries and materials. Each gripper design will be tested on every object 3-5 times, and we will record whether or not it was able to hold the object securely or not. An object will only be counted as held securely if the gripper can be shaken and the object will not come loose. Objects will be sorted into groups to get a good idea if some designs are versatile across the board, or are well specified for a specific group of shapes or materials. This will allow us to determine not only which grippers to use at competition, but what some of the weak points of each design are.
+- For reliability, we will attach the gripper to a fixed stand, and run the motor in continuous open and close cycles for 48+ hours. A magnet attached to the gripper's moving parts will be paired with a stationary hall effect sensor. Each time the magnet passes the sensor, a cycle will be counted. This way, we can track the exact number of cycles until mechanical failure.
