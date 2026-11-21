@@ -144,6 +144,47 @@ ul.results strong { font-family: "Sora", sans-serif; font-size: 1.25rem; font-we
 .post ul { padding-left: 1.25rem; }
 .post li { margin-bottom: .4rem; }
 
+/* Markdown pipe tables */
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: transparent;
+}
+
+.post thead th {
+  text-align: left;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.post tbody td {
+  padding: 1rem 1.25rem;
+  color: #c3ceda;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.post tbody tr:last-child td {
+  border-bottom: 1px solid var(--line);
+}
+
+/* Improve readability for wrapped content */
+.post th,
+.post td {
+  line-height: 1.6;
+}
+
+/* Optional: allow horizontal scrolling on narrow screens */
+.post table {
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
+}
+
 /* Blog list */
 .post-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.25rem; max-width: 40rem; }
 .post-card { padding: 1.25rem 1.5rem; }
