@@ -25,6 +25,8 @@ Wisconsin Autonomous Underwater Vehicles (WAUV) is a new engineering club at UWâ
 
 As Mechanisms Lead, I design mechanisms myself and guide the design, prototyping, testing, and integration of all of them across a team of 15+ engineers.
 
+## 
+
 | Task | What the AUV must do | Mechanism | What matters most |
 | --- | --- | --- | --- |
 | 3, Recon | Drop two markers into the correct bin | Marker dropper | Reliability and small size |
@@ -32,6 +34,7 @@ As Mechanisms Lead, I design mechanisms myself and guide the design, prototyping
 | 5, Restore | Pick up objects, surface in the right area, and place them in baskets | Gripper | Versatility and simplicity |
 
 ## 
+
 ## Task 3, Recon: _Dropper Mechanism_
 
 In Recon, the AUV drops markers into the correct bin, based on a role assigned at the start of the competition. Each team gets two markers, typically small steel balls. Placing a marker in the correct bin scores points, and placing one in each correct bin scores extra.
@@ -68,5 +71,6 @@ We are in the process of shifting our attention more towards testing and validat
 ## Next steps
 
 I am planning to validate both the versatility and reliability of the gripper. I've designed two tests.
+
 - For versatility, I am going to create or obtain various objects with differing geometries and materials. Each gripper design will be tested on every object 3-5 times, and we will record whether or not it was able to hold the object securely or not. An object will only be counted as held securely if the gripper can be shaken and the object will not come loose. Objects will be sorted into groups to get a good idea if some designs are versatile across the board, or are well specified for a specific group of shapes or materials. This will allow us to determine not only which grippers to use at competition, but what some of the weak points of each design are.
 - For reliability, we will attach the gripper to a fixed stand, and run the motor in continuous open and close cycles for 48+ hours. A magnet attached to the gripper's moving parts will be paired with a stationary hall effect sensor. Each time the magnet passes the sensor, a cycle will be counted. This way, we can track the exact number of cycles until mechanical failure.
