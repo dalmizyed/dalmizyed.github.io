@@ -25,7 +25,6 @@ Wisconsin Autonomous Underwater Vehicles (WAUV) is a new engineering club at UWâ
 
 As Mechanisms Lead, I design mechanisms myself and guide the design, prototyping, testing, and integration of all of them across a team of 15+ engineers.
 
-## 
 
 | Task | What the AUV must do | Mechanism | What matters most |
 | --- | --- | --- | --- |
@@ -33,7 +32,6 @@ As Mechanisms Lead, I design mechanisms myself and guide the design, prototyping
 | 4, Deploy | Fire a torpedo through the correct opening | Torpedo launcher | Accuracy |
 | 5, Restore | Pick up objects, surface in the right area, and place them in baskets | Gripper | Versatility and simplicity |
 
-## 
 
 ## Task 3, Recon: _Dropper Mechanism_
 
