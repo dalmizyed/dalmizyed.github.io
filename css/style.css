@@ -110,6 +110,7 @@ h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; line-height: 1.1; margi
 .skills dd { margin: 0; color: #c3ceda; }
 @media (max-width: 34rem) { .skills div { grid-template-columns: 1fr; gap: 0; } }
 .prose { max-width: 38rem; color: #c3ceda; }
+.prose p { margin: 0 0 1.1rem; }
 .contact { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .75rem; }
 .contact a { display: inline-block; padding: .6rem 1.2rem; border: 1px solid var(--line); border-radius: 999px; color: var(--text); text-decoration: none; transition: transform .2s var(--ease), border-color .2s ease, background-color .2s ease; }
 .contact a:hover { border-color: var(--accent); background: var(--surface-2); transform: translateY(-2px); }
