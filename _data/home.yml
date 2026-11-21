@@ -1,0 +1,3 @@
+# Home page background image. Upload an image in /admin/ (Home page settings) or set the path here,
+# for example: /assets/images/hero.jpg. Leave blank for the default glow.
+hero_image:

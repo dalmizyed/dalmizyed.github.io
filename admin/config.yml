@@ -48,4 +48,21 @@ collections:
         fields:
           - { label: Highlight, name: value, widget: string }
           - { label: Text, name: text, widget: string }
+      - label: Technical documents (PDFs)
+        name: documents
+        widget: list
+        required: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: File, name: file, widget: file, media_folder: /assets/docs, public_folder: /assets/docs }
       - { label: Body, name: body, widget: markdown }
+
+  - name: home
+    label: Home page settings
+    files:
+      - name: hero
+        label: Hero background
+        file: _data/home.yml
+        fields:
+          - { label: Hero background image, name: hero_image, widget: image, required: false, media_folder: /assets/images, public_folder: /assets/images, hint: "Wide landscape photo, about 1920px across. It fades out as visitors scroll to the projects." }

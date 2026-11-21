@@ -4,13 +4,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="theme-color" content="#0b1017">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kody Almizyed | Mechanical Engineering Portfolio</title>
   <meta name="description" content="Kody Almizyed, mechanical engineering student at UW–Madison. Projects in product testing and underwater vehicle mechanisms.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#projects">Skip to projects</a>
@@ -28,6 +30,8 @@
 
   <main id="top">
     <section class="hero">
+      <div class="hero-bg"{% if site.data.home.hero_image %} style="background-image:url('{{ site.data.home.hero_image | relative_url }}')"{% endif %}></div>
+      <div class="hero-inner">
       <h1>Kody Almizyed</h1>
       <div class="dim" aria-hidden="true"><span>Mechanical Engineering, UW–Madison, Class of 2029</span></div>
       <p class="lead">I design, test, and build mechanical systems, from underwater vehicle mechanisms to HVAC damper failure analysis. My goal is a career in the space industry.</p>
@@ -35,6 +39,7 @@
         <a class="btn" href="#projects">See projects</a>
         <a class="btn ghost" href="assets/resume/resume.pdf">Download résumé</a>
       </p>
+      </div>
     </section>
 
     <section id="projects" class="section">
@@ -58,21 +63,21 @@
     <section id="skills" class="section">
       <h2>Skills</h2>
       <dl class="skills">
-        <div><dt>Design and analysis</dt><dd>SolidWorks, Onshape, FEA, FMEA, Windchill, Excel</dd></div>
-        <div><dt>Hardware</dt><dd>Arduino, soldering, 3D printing</dd></div>
+        <div><dt>Design and analysis</dt><dd>CAD, PTC Windchill, FMEA, strain gaging, Excel</dd></div>
+        <div><dt>Hardware</dt><dd>Arduino, rapid prototyping, soldering, 3D printing</dd></div>
         <div><dt>Programming</dt><dd>Python, C++, Java, JavaScript, Lua, Bash, Git</dd></div>
       </dl>
     </section>
 
     <section id="about" class="section">
       <h2>About</h2>
-      <p class="prose">I’m a mechanical engineering student at the University of Wisconsin–Madison, graduating in May 2029. I lead mechanism design for Wisconsin Autonomous Underwater Vehicles, recently joined the SAE Aero design team, and spent summer 2026 as a mechanical engineering intern at AprilAire, where I worked on failure analysis and test development. I am seeking a summer 2027 internship in the aerospace industry, where I can apply my design, testing, and analysis skills while building toward a career in the space industry.</p>
+      <p class="prose">I’m a mechanical engineering student at the University of Wisconsin–Madison, also earning a certificate in computer sciences, graduating in May 2029. I lead more than 15 engineers on mechanisms for Wisconsin Autonomous Underwater Vehicles, recently joined the SAE Aero design team, and spent summer 2026 as a mechanical engineering intern at AprilAire, where I worked on failure analysis and test development. I am seeking a summer 2027 internship in the aerospace industry, where I can apply my design, testing, and analysis skills while building toward a career in the space industry.</p>
     </section>
 
     <section id="contact" class="section">
       <h2>Contact</h2>
       <ul class="contact">
-        <li><a href="mailto:dba2007@live.com">dba2007@live.com</a></li>
+        <li><a href="mailto:kodyalmizyed@outlook.com">kodyalmizyed@outlook.com</a></li>
         <li><a href="https://www.linkedin.com/in/kodyalmizyed">LinkedIn</a></li>
         <li><a href="https://github.com/dalmizyed">GitHub</a></li>
       </ul>
